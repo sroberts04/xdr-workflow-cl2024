@@ -1,0 +1,330 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_02DKBYTZX2NOO2JCQxgQAcDoNr9h4KNnKtP",
+    "name": "Shaun-Parent-Demo-LTRATO1000",
+    "title": "Shaun-Parent-Demo-LTRATO1000",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "Bret",
+          "scope": "input",
+          "name": "username",
+          "type": "datatype.string",
+          "is_required": false,
+          "display_on_wizard": false,
+          "is_invisible": false
+        },
+        "unique_name": "variable_workflow_02DKC0YRA5I6X6doCLL2wnAfZtBSyi094dg",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "automation_rules": {
+        "type": [
+          "schedule.rule_schedule"
+        ]
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Shaun-Parent-Demo-LTRATO1000",
+      "runtime_user": {
+        "target_default": true
+      },
+      "target": {
+        "no_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_02DKBYVU4GKYO1mQMl8DKEcGxkDGYMtUTbt",
+        "name": "pod-shaurobe@cisco.com-demo",
+        "title": "pod-shaurobe@cisco.com-demo",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "pod-shaurobe@cisco.com-demo",
+          "input": {
+            "variable_workflow_02DKBHFUS8PFL2TlZKui43r2iUWzOHq4ytr": "users"
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "target": {
+            "execute_on_this_target": true,
+            "target_id": "definition_target_02BV2XE3UHMHW2eky71XIEtil458f1x5CwW",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_02DKBENM4RYXS231T51UEqlJGg4r9rSLU7C",
+          "workflow_name": "pod-shaurobe@cisco.com-demo"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02DKFHRTYNAP55dBXme6S505lNO74uIlLXS",
+        "name": "Create_Document_In_Mongo-RestHeart",
+        "title": "Create_Document_In_Mongo-RestHeart",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Create_Document_In_Mongo-RestHeart",
+          "input": {
+            "variable_workflow_01P0GS2SYRNAD5djU4I0EmDyh4Y5moK99Mr": "CiscoLive2024",
+            "variable_workflow_01P0GS9ADS0FB2p5ZH16T37LUc5yub2YWhi": "LTRATO1000",
+            "variable_workflow_01P0GSK7IBUCF1egLmUv3sAxTwOtmvwiqus": "{\n \"workflowId\": \"$workflow.definition_workflow_02DKBYTZX2NOO2JCQxgQAcDoNr9h4KNnKtP.output.instance_id$\",\n \"output\": \"none\",\n \"$currentDate\": { \"lastModified\": true}\n}",
+            "variable_workflow_01Q8N6BMRXR1F4IwAmNFn19l4XpB4LuqUWg": false
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01XRDVM4WWH4B6v4FSxN6q8ZJzj0kZcTYZ8",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01P0GR3W6BLFK0lH4HekJSKaPcftY2an66W",
+          "workflow_name": "Create_Document_In_Mongo-RestHeart"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02DKFHM7DUFMQ1lEiV9xzljErHS7FQE9WdT",
+        "name": "Modify_Document_In_Mongo-RestHeart",
+        "title": "Modify_Document_In_Mongo-RestHeart",
+        "type": "workflow.atomic_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Modify_Document_In_Mongo-RestHeart",
+          "input": {
+            "variable_workflow_01P0K38MFMKLC15BaJ8V84fIITsTe7S3bsQ": "{\n \"output\": \"boom baby\"\n}",
+            "variable_workflow_01P0K38MFMU176V1psk22FCiAVcMmKDUzQf": "LTRATO1000",
+            "variable_workflow_01P0K38MFMX381olgktMHgNk4SZADqvVAED": "CiscoLive2024",
+            "variable_workflow_01P0K38MFMZRB5kmabduFKxAOG8gCYEpzDD": "60be21f821f1f8320c42ec7b",
+            "variable_workflow_01P0K6BFDR85M2evKKFVQlzMwKLYm7lJ5KB": "{\"workflowId\": \"$workflow.definition_workflow_02DKBYTZX2NOO2JCQxgQAcDoNr9h4KNnKtP.output.instance_id$\"}",
+            "variable_workflow_01Q8NDJVZ30DI31gRnRcGnzTdfe3yB587hM": false
+          },
+          "runtime_user": {
+            "target_default": true
+          },
+          "skip_execution": false,
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01XRDVM4WWH4B6v4FSxN6q8ZJzj0kZcTYZ8",
+            "target_type": "web-service.endpoint"
+          },
+          "workflow_id": "definition_workflow_01P0K38QGGYDQ29vzDMyXrkbrrwsSBBCAsL",
+          "workflow_name": "Modify_Document_In_Mongo-RestHeart"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02DKGQR4RCUIZ60TGSb0F1qW5iOa8f76sBW",
+        "name": "Completed",
+        "title": "Completed",
+        "type": "logic.completed",
+        "base_type": "activity",
+        "properties": {
+          "completion_type": "succeeded",
+          "continue_on_failure": false,
+          "display_name": "Completed",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02DKFVMJW9QWO4e5ONBSEuHdm7D5RsMlL5g",
+        "name": "Execute Python Script",
+        "title": "Execute Python Script",
+        "type": "python3.script",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "Execute Python Script",
+          "skip_execution": true
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_02DKBYXX3HNYA2UtW4zU80IoaVq2WUpUWC3",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": true,
+          "display_name": "JSONPath Query",
+          "input_json": "$activity.definition_activity_02DKBYVU4GKYO1mQMl8DKEcGxkDGYMtUTbt.output.variable_workflow_02DKBO4BJ1QCP31SLdEBJ4dhqSplBcP9L4n$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.[?(@.username==\"$workflow.definition_workflow_02DKBYTZX2NOO2JCQxgQAcDoNr9h4KNnKtP.input.variable_workflow_02DKC0YRA5I6X6doCLL2wnAfZtBSyi094dg$\"].",
+              "jsonpath_query_name": "",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": "yyyy-MM-dd'T'HH:mm:ssZ"
+            }
+          ],
+          "skip_execution": true
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "rules": {
+    "ruleschedule_02DKHRPKG827S3qcWJi9KktSVyfkPlWjguL": {
+      "name": "test",
+      "title": "test",
+      "type": "schedule.rule_schedule",
+      "rule_type": "rule_schedule",
+      "base_type": "rule",
+      "object_type": "ruleschedule",
+      "version": "1.0.0",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "description": "",
+        "display_name": "test",
+        "interval_hours": 1,
+        "interval_minutes": 0,
+        "number_of_times": 23,
+        "rule_type": "rule_schedule",
+        "starttime": "01:00",
+        "timezone": "Etc/GMT+0",
+        "title": "test",
+        "workflows_config": [
+          {
+            "disabled": false,
+            "ref_id": "definition_workflow_02DKBYTZX2NOO2JCQxgQAcDoNr9h4KNnKtP",
+            "wf_input_variables": {
+              "variable_workflow_02DKC0YRA5I6X6doCLL2wnAfZtBSyi094dg": "Bret"
+            },
+            "status": {
+              "state": "started-polling",
+              "prev_state": "created",
+              "error_msg": ""
+            }
+          }
+        ]
+      },
+      "disabled": false,
+      "unique_name": "ruleschedule_02DKHRPKG827S3qcWJi9KktSVyfkPlWjguL"
+    }
+  },
+  "targets": {
+    "definition_target_01XRDVM4WWH4B6v4FSxN6q8ZJzj0kZcTYZ8": {
+      "unique_name": "definition_target_01XRDVM4WWH4B6v4FSxN6q8ZJzj0kZcTYZ8",
+      "name": "Mongo-RestHeart-API-Target-CL2024",
+      "title": "Mongo-RestHeart-API-Target-CL2024",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "ao_remote_id": "02BOKLNIPT36Z1FjVp5fytgLE0RqvyNAPO3",
+        "default_runtime_user_id": "definition_runtime_user_01OY3U05D9AEN53MgdZYcq8VtQgtNBlB4PF",
+        "description": "gesgfsadsa",
+        "disable_certificate_validation": false,
+        "display_name": "Mongo-RestHeart-API-Target-CL2024",
+        "host": "173.37.29.47",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "port": 8080,
+        "protocol": "http"
+      }
+    },
+    "definition_target_02BV2XE3UHMHW2eky71XIEtil458f1x5CwW": {
+      "unique_name": "definition_target_02BV2XE3UHMHW2eky71XIEtil458f1x5CwW",
+      "name": "Pod600-HTTP Target",
+      "title": "Pod600-HTTP Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_02BV2WMYWO72H1SHSM0kFCgXzkzX30NiBke",
+        "disable_certificate_validation": true,
+        "display_name": "Pod600-HTTP Target",
+        "host": "jsonplaceholder.typicode.com",
+        "ignore_proxy": false,
+        "no_runtime_user": false,
+        "port": 443,
+        "protocol": "https"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01OY3U05D9AEN53MgdZYcq8VtQgtNBlB4PF": {
+      "unique_name": "definition_runtime_user_01OY3U05D9AEN53MgdZYcq8VtQgtNBlB4PF",
+      "name": "CX Mongo Lab User",
+      "title": "CX Mongo Lab User",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "Basic",
+        "basic_password": "*****",
+        "basic_username": "admin",
+        "display_name": "CX Mongo Lab User"
+      }
+    },
+    "definition_runtime_user_02BV2WMYWO72H1SHSM0kFCgXzkzX30NiBke": {
+      "unique_name": "definition_runtime_user_02BV2WMYWO72H1SHSM0kFCgXzkzX30NiBke",
+      "name": "Pod600-HTTP Account ",
+      "title": "Pod600-HTTP Account ",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "auth_option": "Basic",
+        "basic_password": "*****",
+        "basic_username": "test",
+        "display_name": "Pod600-HTTP Account "
+      }
+    }
+  },
+  "atomic_workflows": [
+    "definition_workflow_02DKBENM4RYXS231T51UEqlJGg4r9rSLU7C",
+    "definition_workflow_01P0GR3W6BLFK0lH4HekJSKaPcftY2an66W",
+    "definition_workflow_01P0K38QGGYDQ29vzDMyXrkbrrwsSBBCAsL"
+  ],
+  "remotemetas": {
+    "remote_meta_02BOKLNIPVX2C5jGowqo8V8S6BPhI6tvR0w": {
+      "base_type": "remote_meta",
+      "type": "generic.remote_meta",
+      "name": "Cisco Live 2024 Remote",
+      "title": "Cisco Live 2024 Remote",
+      "version": "1.0.0",
+      "properties": {
+        "advanced": {
+          "require_advanced": false
+        },
+        "cloud_type": "vmware",
+        "display_name": "Cisco Live 2024 Remote",
+        "network": {
+          "dns_servers": "172.18.108.43,172.18.108.34",
+          "gateway": "10.122.138.193",
+          "ip_endpoint": "10.122.138.195/26",
+          "is_static_ip": true
+        },
+        "proxy": {
+          "require_proxy": false
+        }
+      },
+      "unique_name": "remote_meta_02BOKLNIPVX2C5jGowqo8V8S6BPhI6tvR0w",
+      "object_type": "remote_meta"
+    }
+  },
+  "dependent_workflows": [
+    "definition_workflow_02DKBENM4RYXS231T51UEqlJGg4r9rSLU7C",
+    "definition_workflow_01P0GR3W6BLFK0lH4HekJSKaPcftY2an66W",
+    "definition_workflow_01P0K38QGGYDQ29vzDMyXrkbrrwsSBBCAsL"
+  ]
+}
